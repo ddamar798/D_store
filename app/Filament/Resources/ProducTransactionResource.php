@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProductTransactionResource\Pages;
 use App\Filament\Resources\ProductTransactionResource\RelationManagers;
-use App\Models\ProductTransaction;
+use App\Models\ProducTransaction;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ProductTransactionResource extends Resource
+class ProducTransactionResource extends Resource
 {
-    protected static ?string $model = ProductTransaction::class;
+    protected static ?string $model = ProducTransaction::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 

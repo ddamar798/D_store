@@ -16,7 +16,7 @@ class Category extends Model
 
     public function shoes(): HasMany
     {
-        return $this->hasMany(Shoes::class);
+        return $this->hasMany(Shoe::class);
     }
 
     public function setNameAttribute($value)

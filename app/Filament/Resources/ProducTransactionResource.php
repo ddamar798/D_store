@@ -56,9 +56,9 @@ class ProducTransactionResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListProductTransactions::route('/'),
-            'create' => Pages\CreateProductTransaction::route('/create'),
-            'edit' => Pages\EditProductTransaction::route('/{record}/edit'),
+            'index' => Pages\ListProducTransactions::route('/'),
+            'create' => Pages\CreateProducTransaction::route('/create'),
+            'edit' => Pages\EditProducTransaction::route('/{record}/edit'),
         ];
     }
 }

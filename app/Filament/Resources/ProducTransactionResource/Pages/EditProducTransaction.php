@@ -2,13 +2,13 @@
 
 namespace App\Filament\Resources\ProductTransactionResource\Pages;
 
-use App\Filament\Resources\ProductTransactionResource;
+use App\Filament\Resources\ProducTransactionResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditProductTransaction extends EditRecord
+class EditProducTransaction extends EditRecord
 {
-    protected static string $resource = ProductTransactionResource::class;
+    protected static string $resource = ProducTransactionResource::class;
 
     protected function getHeaderActions(): array
     {

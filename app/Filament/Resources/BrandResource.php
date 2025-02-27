@@ -43,6 +43,12 @@ class BrandResource extends Resource
         return $table
             ->columns([
                 //
+                Tables\Columns\TextColumn::make('name')
+                ->searchable(),
+
+                Tables\Columns\ImageColumn::make('logo')
+                ->circular(),
+
             ])
             ->filters([
                 //

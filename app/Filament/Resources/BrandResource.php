@@ -46,8 +46,8 @@ class BrandResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                 ->searchable(),
 
-                Tables\Columns\ImageColumn::make('logo')
-                ->circular(),
+                Tables\Columns\ImageColumn::make('logo'),
+                
 
             ])
             ->filters([

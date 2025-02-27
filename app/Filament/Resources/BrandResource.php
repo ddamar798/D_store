@@ -29,8 +29,8 @@ class BrandResource extends Resource
                 ->required()
                 ->maxLength(225),
 
-                Forms\Components\TextInput::make('slug')
-                ->required(),
+                // Forms\Components\TextInput::make('slug')
+                // ->required(),
 
                 Forms\Components\FileUpload::make('logo')
                 ->image()

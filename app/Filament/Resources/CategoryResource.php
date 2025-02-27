@@ -24,14 +24,27 @@ class CategoryResource extends Resource
         return $form
             ->schema([
                 //
+                Forms\Components\TextInput::make('name')
+                ->required()
+                ->maxLength(225),
+
+                Forms\Components\FileUpload::make('icon')
+                ->image()
+                ->required(),
             ]);
     }
 
     public static function table(Table $table): Table
     {
+        // Memunjulkan data dari Input.
         return $table
             ->columns([
                 //
+                Tables\Columns\TextColumn::make('name')
+                ->searchable(), // Untuk bisa mencari produk berdasarkan nama.
+
+                Tables\Columns\imageColumn::make('icon')
+                ->circular(), 
             ])
             ->filters([
                 //

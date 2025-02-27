@@ -44,7 +44,7 @@ class CategoryResource extends Resource
                 ->searchable(), // Untuk bisa mencari produk berdasarkan nama.
 
                 Tables\Columns\imageColumn::make('icon')
-                ->circular(), 
+                ->circular(), // Agar gambar bisa berbentuk lingkaran.
             ])
             ->filters([
                 //

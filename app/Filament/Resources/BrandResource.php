@@ -25,6 +25,16 @@ class BrandResource extends Resource
         return $form
             ->schema([
                 //
+                Forms\Components\TextInput::make('name')
+                ->required()
+                ->maxLength(225),
+
+                Forms\Components\TextInput::make('slug')
+                ->required(),
+
+                Forms\Components\FileUpload::make('logo')
+                ->image()
+                ->required(),
             ]);
     }
 

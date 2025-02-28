@@ -18,7 +18,7 @@ class BrandResource extends Resource
 {
     protected static ?string $model = Brands::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack'; // Ambil icon di website HeroIcon.
 
     public static function form(Form $form): Form
     {

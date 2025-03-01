@@ -69,6 +69,12 @@ class ShoeResource extends Resource
                     ])
                     ->required(),
 
+                    Forms\Components\Select::make('category_id')
+                    ->relationship('category', 'name')
+                    ->searchable()
+                    ->preload()
+                    ->required(),
+
                 ])
             ]);
     }

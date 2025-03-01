@@ -6,6 +6,7 @@ use App\Filament\Resources\ShoeResource\Pages;
 use App\Filament\Resources\ShoeResource\RelationManagers;
 use App\Models\Shoe;
 use Filament\Forms;
+use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -24,6 +25,36 @@ class ShoeResource extends Resource
         return $form
             ->schema([
                 //
+                Fieldset::make('Details')
+                ->schema([
+
+                    Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+
+                    Forms\Components\TextInput::make('price')
+                    ->required()
+                    ->numeric()
+                    ->prefix('IDR'),
+
+                    Forms\Components\FileUpload::make('thumbnail')
+                    ->image()
+                    ->required(),
+
+                    Forms\Components\Repeater::make('photos')
+                    ->relationship('sizes')
+                    ->schema([
+                        Forms\Components\FileUpload::make('photo')
+                        ->required(),
+                    ]),
+
+                    Forms\Components\Repeater::make('sizes')
+                    ->relationship('sizes')
+                    ->schema([
+                        Forms\Components\TextInput::make('size')
+                        ->required(),
+                    ]),
+                ]),
             ]);
     }
 

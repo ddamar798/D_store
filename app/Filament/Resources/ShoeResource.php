@@ -55,6 +55,13 @@ class ShoeResource extends Resource
                         ->required(),
                     ]),
                 ]),
+
+                Fieldset::make('Additional')
+                ->schema([
+
+                    Forms\Components\Textarea::make('about')
+                    ->require(),
+                ])
             ]);
     }
 

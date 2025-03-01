@@ -75,6 +75,12 @@ class ShoeResource extends Resource
                     ->preload()
                     ->required(),
 
+                    Forms\Components\Select::make('brand_id')
+                    ->relationship('brand', 'name')
+                    ->searchable()
+                    ->preload()
+                    ->required(),
+
                 ])
             ]);
     }

@@ -60,7 +60,15 @@ class ShoeResource extends Resource
                 ->schema([
 
                     Forms\Components\Textarea::make('about')
-                    ->require(),
+                    ->required(),
+
+                    Forms\Components\Select::make('is_popular')
+                    ->options([
+                        true=>'popular',
+                        false=>'not popular',
+                    ])
+                    ->required(),
+
                 ])
             ]);
     }

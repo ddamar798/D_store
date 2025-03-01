@@ -81,7 +81,12 @@ class ShoeResource extends Resource
                     ->preload()
                     ->required(),
 
-                ])
+                    Forms\Components\TextInput::make('stock')
+                    ->required()
+                    ->numeric()
+                    ->prefix('Qty'),
+
+                    ]),
             ]);
     }
 

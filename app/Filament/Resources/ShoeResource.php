@@ -118,6 +118,9 @@ class ShoeResource extends Resource
                 ->relationship('category', 'name'),
 
                 // Fillament bisa menambahkan dua Filter.
+                SelectFilter::make('brand_id') // untuk memfilter data berdasarkan Category.
+                ->label('brand')
+                ->relationship('brand', 'name'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

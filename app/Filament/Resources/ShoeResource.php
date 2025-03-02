@@ -116,6 +116,8 @@ class ShoeResource extends Resource
                 SelectFilter::make('category_id') // untuk memfilter data berdasarkan Category.
                 ->label('Category')
                 ->relationship('category', 'name'),
+
+                // Fillament bisa menambahkan dua Filter.
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

@@ -95,6 +95,20 @@ class ShoeResource extends Resource
         return $table
             ->columns([
                 //
+                Tables\Columns\TextColumn::make('name')
+                ->searchable(),
+
+                Tables\Columns\TextColumn::make('category.name'),
+
+                Tables\Columns\ImageColumn::make('thumbnail'),
+
+                Tables\Columns\IconColumn::make('is_popular')
+                ->boolean()
+                ->trueColor('success')
+                ->falseColor('danger')
+                ->trueIcon('heroicon-o-check-circle')
+                ->label('Popular'),
+
             ])
             ->filters([
                 //

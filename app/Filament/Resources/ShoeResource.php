@@ -113,7 +113,7 @@ class ShoeResource extends Resource
             ])
             ->filters([
                 //
-                SelectFilter::make('category_id')
+                SelectFilter::make('category_id') // untuk memfilter data berdasarkan Category. Bisa juga diganti denggan Resource dari Brand
                 ->label('Category')
                 ->relationship('category', 'name'),
             ])

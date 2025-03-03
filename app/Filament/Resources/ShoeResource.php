@@ -114,7 +114,7 @@ class ShoeResource extends Resource
             ->filters([
                 // Untuk memfilter data yang ditampilkan.
 
-                SelectFilter::make('category_id') // untuk memfilter data berdasarkan Category.
+                SelectFilter::make('category_id') // untuk filter data berdasarkan Category.  
                 ->label('Category')
                 ->relationship('category', 'name'),
 

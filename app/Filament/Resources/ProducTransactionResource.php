@@ -2,17 +2,18 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProductTransactionResource\Pages;
-use App\Filament\Resources\ProductTransactionResource\RelationManagers;
-use App\Models\ProducTransaction;
 use Filament\Forms;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
+use App\Models\Shoe;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use App\Models\ProducTransaction;
+use Filament\Forms\Components\Grid;
 use Illuminate\Database\Eloquent\Builder;   
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\ProductTransactionResource\Pages;
+use App\Filament\Resources\ProductTransactionResource\RelationManagers;
 
 class ProducTransactionResource extends Resource
 {
@@ -40,7 +41,7 @@ class ProducTransactionResource extends Resource
                             ->reactive()
                             ->afterStateUpdated(function($state, callable $get, callable $set){
 
-                                
+                                $shoe = Shoe::find($state);
                             })
                         ])
 

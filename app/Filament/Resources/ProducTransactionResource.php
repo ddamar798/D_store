@@ -42,6 +42,7 @@ class ProducTransactionResource extends Resource
                             ->afterStateUpdated(function($state, callable $get, callable $set){
 
                                 $shoe = Shoe::find($state);
+                                $price = $shoe ? $shoe->price : 0;
                             })
                         ])
 

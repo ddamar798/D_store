@@ -45,6 +45,9 @@ class ProducTransactionResource extends Resource
                                 $price = $shoe ? $shoe->price : 0;
                                 $quantity = $get('quantity') ?? 1;
                                 $subTotalAmount = $price * $quantity;
+
+                                $set = ('price'. $price);
+                                $set('sub_total_amount', $subTotalAmount);
                             })
                         ])
 

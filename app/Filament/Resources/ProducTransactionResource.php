@@ -43,6 +43,7 @@ class ProducTransactionResource extends Resource
 
                                 $shoe = Shoe::find($state);
                                 $price = $shoe ? $shoe->price : 0;
+                                $quantity = $get('quantity') ?? 1;
                             })
                         ])
 

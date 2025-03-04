@@ -32,6 +32,7 @@ class ProducTransactionResource extends Resource
 
                         Grid::make(2)
                         ->schema([
+                            Forms\Components\Select::make('shoe_id')
                             
                         ])
 

@@ -6,6 +6,7 @@ use App\Filament\Resources\ProductTransactionResource\Pages;
 use App\Filament\Resources\ProductTransactionResource\RelationManagers;
 use App\Models\ProducTransaction;
 use Filament\Forms;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -29,7 +30,10 @@ class ProducTransactionResource extends Resource
                     Forms\Components\Wizard\Step::make('Product and Price')
                     ->schema([
 
-                        
+                        Grid::make(2)
+                        ->schema([
+                            
+                        ])
 
                     ])
 

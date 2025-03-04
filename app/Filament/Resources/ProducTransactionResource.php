@@ -33,7 +33,15 @@ class ProducTransactionResource extends Resource
                         Grid::make(2)
                         ->schema([
                             Forms\Components\Select::make('shoe_id')
-                            
+                            ->relationship('shoe','name')
+                            ->searchable()
+                            ->preload()
+                            ->required()
+                            ->reactive()
+                            ->afterStateUpdated(function($state, callable $get, callable $set){
+
+                                
+                            })
                         ])
 
                     ])

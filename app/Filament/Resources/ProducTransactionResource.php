@@ -26,7 +26,13 @@ class ProducTransactionResource extends Resource
                 //
                 Forms\Components\Wizard::make([
 
-                    
+                    Forms\Components\Wizard\Step::make('Product and Price')
+                    ->schema([
+
+                        
+
+                    ])
+
                 ])
             ]);
     }

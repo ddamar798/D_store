@@ -24,6 +24,10 @@ class ProducTransactionResource extends Resource
         return $form
             ->schema([
                 //
+                Forms\Components\Wizard::make([
+
+                    
+                ])
             ]);
     }
 

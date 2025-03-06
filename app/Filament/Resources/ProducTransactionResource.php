@@ -52,6 +52,8 @@ class ProducTransactionResource extends Resource
                                 $discount = $get ('discount_amount') ?? 0;
                                 $grandTotalAmount = $subTotalAmount - $discount;
                                 $set('grand_total_amount', $grandTotalAmount); 
+
+                                $sizes = $shoe ? $shoe->sizes->pluck('size','id')->toArray() : [];
                             })
                         ])
 

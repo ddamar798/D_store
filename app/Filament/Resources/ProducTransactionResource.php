@@ -54,6 +54,7 @@ class ProducTransactionResource extends Resource
                                 $set('grand_total_amount', $grandTotalAmount); 
 
                                 $sizes = $shoe ? $shoe->sizes->pluck('size','id')->toArray() : [];
+                                $set('shoe_sizes', $sizes);
                             })
                         ])
 

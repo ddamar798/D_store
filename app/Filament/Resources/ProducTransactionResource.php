@@ -50,7 +50,8 @@ class ProducTransactionResource extends Resource
                                 $set('sub_total_amount', $subTotalAmount);
 
                                 $discount = $get ('discount_amount') ?? 0;
-                                $grandTotalAmount = $subTotalAmount - $discount; 
+                                $grandTotalAmount = $subTotalAmount - $discount;
+                                $set('grand_total_amount', $grandTotalAmount); 
                             })
                         ])
 

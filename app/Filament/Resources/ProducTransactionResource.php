@@ -33,7 +33,7 @@ class ProducTransactionResource extends Resource
 
                         Grid::make(2)
                         ->schema([
-                            Forms\Components\Select::make('shoe_id')
+                            Forms\Components\Select::make('shoe_id') // Untuk mengetahui Produk mana yang di isi oleh User.
                             ->relationship('shoe','name')
                             ->searchable()
                             ->preload()

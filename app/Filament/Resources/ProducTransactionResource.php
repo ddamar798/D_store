@@ -37,8 +37,8 @@ class ProducTransactionResource extends Resource
                             ->relationship('shoe','name')
                             ->searchable()
                             ->preload()
-                            ->required()
-                            //->reactive()
+                            ->required() 
+                            //->reactive() // laravel 2.
                             ->live()
                             ->afterStateUpdated(function($state, callable $get, callable $set){
 

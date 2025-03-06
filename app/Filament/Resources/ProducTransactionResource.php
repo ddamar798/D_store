@@ -38,7 +38,8 @@ class ProducTransactionResource extends Resource
                             ->searchable()
                             ->preload()
                             ->required()
-                            ->reactive()
+                            //->reactive()
+                            ->live()
                             ->afterStateUpdated(function($state, callable $get, callable $set){
 
                                 $shoe = Shoe::find($state);

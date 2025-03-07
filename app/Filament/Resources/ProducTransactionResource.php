@@ -38,7 +38,7 @@ class ProducTransactionResource extends Resource
                             ->searchable()
                             ->preload()
                             ->required() 
-                            //->reactive() // laravel 2.
+                            //->reactive() // untuk laravel 2.
                             ->live() // Laravel 3.
                             ->afterStateUpdated(function($state, callable $get, callable $set){
 

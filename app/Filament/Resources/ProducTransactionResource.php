@@ -57,6 +57,13 @@ class ProducTransactionResource extends Resource
                                 $sizes = $shoe ? $shoe->sizes->pluck('size','id')->toArray() : [];
                                 $set('shoe_sizes', $sizes);
                             })
+                            ->AfterStateHydrated(function (callable $get, callable $set, $state){
+                                $shoeId = $state;
+                                if ($shoeId){
+                                    $shoe = Shoe::find($shoeId);
+                                    $sizes = $shoe ? $shoe->sizes->pluck('size', 'id')->toArray() : [];
+                                }
+                            }),
                         ])
 
                     ])

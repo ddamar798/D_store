@@ -64,6 +64,13 @@ class ProducTransactionResource extends Resource
                                     $sizes = $shoe ? $shoe->sizes->pluck('size', 'id')->toArray() : [];
                                 }
                             }),
+
+                            Forms\Components\Select::make('shoe_size')
+                            ->label('Shoe Size')
+                            ->options(function (callable $get){
+                                $sizes = $get('shoe_sizes');
+                                return is_array($sizes) ? $sizes : [];
+                            })
                         ])
 
                     ])

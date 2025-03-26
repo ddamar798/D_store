@@ -71,6 +71,8 @@ class ProducTransactionResource extends Resource
                                 $sizes = $get('shoe_sizes');
                                 return is_array($sizes) ? $sizes : [];
                             })
+                            ->required()
+                            ->reactive()
                         ])
 
                     ])

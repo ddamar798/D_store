@@ -6,6 +6,7 @@ use Filament\Forms;
 use App\Models\Shoe;
 use Filament\Tables;
 use Filament\Forms\Form;
+use App\Models\PromoCode;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use App\Models\ProducTransaction;
@@ -87,6 +88,22 @@ class ProducTransactionResource extends Resource
                                 $set('sub_total_amount', $subTotalAmount);
 
                                 $discount = $get('discount_amount') ?? 0;
+                                $grandTotalAmount = $subTotalAmount - $discount;
+                                $set('grand_total_amount', $grandTotalAmount);
+                            }),
+
+                            Forms\Components\Select::make('promo_code_id')
+                            ->reelationship('promoCode', 'code')
+                            ->searchable()
+                            ->preload()
+                            ->live()
+                            ->afterStateUpdated(function ($state, callable $get, callable $set){
+                                $subTotalAmount = $get('sub_total_amount');
+                                $promoCode = PromoCode::find($state);
+                                $discount = $promoCode ? $promoCode->discount_amount : 0;
+
+                                $set('discount_amount', $discount);
+
                                 $grandTotalAmount = $subTotalAmount - $discount;
                                 $set('grand_total_amount', $grandTotalAmount);
                             }),

@@ -72,7 +72,24 @@ class ProducTransactionResource extends Resource
                                 return is_array($sizes) ? $sizes : [];
                             })
                             ->required()
+                            ->reactive(),
+
+                            Forms\Components\TextInput::make('quantity')
+                            ->required()
+                            ->numeric()
+                            ->prefix('Qty')
                             ->reactive()
+                            ->afterStateUpdated(function ($state, callable $get, callable $set){
+                                $price = $get('price');
+                                $quantity = $state;
+                                $subTotalAmount = $price * $quantity;
+
+                                $set('sub_total_amount', $subTotalAmount);
+
+                                $discount = $get('discount_amount') ?? 0;
+                                $grandTotalAmount = $subTotalAmount - $discount;
+                                $set('grand_total_amount', $grandTotalAmount);
+                            }),
                         ])
 
                     ])

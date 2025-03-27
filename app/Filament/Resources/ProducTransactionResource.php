@@ -72,13 +72,13 @@ class ProducTransactionResource extends Resource
                                 return is_array($sizes) ? $sizes : [];
                             })
                             ->required()
-                            ->reactive(),
+                            ->live(),
 
                             Forms\Components\TextInput::make('quantity')
                             ->required()
                             ->numeric()
                             ->prefix('Qty')
-                            ->reactive()
+                            ->live()
                             ->afterStateUpdated(function ($state, callable $get, callable $set){
                                 $price = $get('price');
                                 $quantity = $state;

@@ -125,9 +125,13 @@ class ProducTransactionResource extends Resource
                             ->readOnly()
                             ->numeric()
                             ->prefix('IDR'),
-                        ])
+                        ]),
 
-                    ])
+                    ]),
+
+
+                    
+
 
                 ])
             ]);

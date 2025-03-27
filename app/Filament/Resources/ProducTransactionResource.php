@@ -113,6 +113,12 @@ class ProducTransactionResource extends Resource
                             ->readOnly()
                             ->numeric()
                             ->prefix('IDR'),
+
+                            Forms\Components\TextInput::make('grand_total_amount')
+                            ->required()
+                            ->readOnly()
+                            ->numeric()
+                            ->prefix('IDR'),
                         ])
 
                     ])

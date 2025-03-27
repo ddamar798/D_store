@@ -107,6 +107,12 @@ class ProducTransactionResource extends Resource
                                 $grandTotalAmount = $subTotalAmount - $discount;
                                 $set('grand_total_amount', $grandTotalAmount);
                             }),
+
+                            Forms\Components\TextInput::make('sub_total_amount')
+                            ->required()
+                            ->readOnly()
+                            ->numeric()
+                            ->prefix('IDR'),
                         ])
 
                     ])

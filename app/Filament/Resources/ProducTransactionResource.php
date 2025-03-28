@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use Filament\Forms;
 use App\Models\Shoe;
+use Filament\Forms\Components\ToggleButtons;
 use Filament\Tables;
 use Filament\Forms\Form;
 use App\Models\PromoCode;
@@ -171,6 +172,16 @@ class ProducTransactionResource extends Resource
                         Forms\Components\TextInput::make('booking_trx_id')
                         ->required()
                         ->maxLength(255),
+
+                        ToggleButtons::make('is_paid')
+                        ->label('Apakah anda sudah membayar?')
+                        ->boolean()
+                        ->grouped()
+                        ->icons([
+                            true => 'heroicon-o-pencil',
+                            false => 'heroicon-o-clock',
+                        ])
+                        ->required()
                     ])
 
                 ])

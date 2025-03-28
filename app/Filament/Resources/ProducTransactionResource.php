@@ -129,7 +129,15 @@ class ProducTransactionResource extends Resource
 
                     ]),
 
-
+                    Forms\Components\Wizard\Step::make('Costumer Information')
+                    ->schema([
+                        Grid::make(2)
+                        ->schema([
+                            Forms\Components\TextInput::make('name')
+                            ->required()
+                            ->maxLength(255)
+                        ])
+                    ])
                     
 
 

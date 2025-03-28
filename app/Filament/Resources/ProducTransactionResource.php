@@ -169,6 +169,8 @@ class ProducTransactionResource extends Resource
                     ->schema([
 
                         Forms\Components\TextInput::make('booking_trx_id')
+                        ->required()
+                        ->maxLength(255),
                     ])
 
                 ])

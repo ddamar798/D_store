@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ProductTransactionResource\Pages;
 use App\Filament\Resources\ProductTransactionResource\RelationManagers;
 
+use function Laravel\Prompts\form;
+
 class ProducTransactionResource extends Resource
 {
     protected static ?string $model = ProducTransaction::class;
@@ -159,10 +161,15 @@ class ProducTransactionResource extends Resource
                             ->maxLength(255),
 
 
-                        ])
-                    ])
+                        ]),
+                    ]),
                     
+                    // Payment Information
+                    Forms\Components\Wizard\Step::make('Payment Information')
+                    ->schema([
 
+                        Forms\Components\TextInput::make('booking_trx_id')
+                    ])
 
                 ])
             ]);

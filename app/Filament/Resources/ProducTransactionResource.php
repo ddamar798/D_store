@@ -135,7 +135,13 @@ class ProducTransactionResource extends Resource
                         ->schema([
                             Forms\Components\TextInput::make('name')
                             ->required()
-                            ->maxLength(255)
+                            ->maxLength(255),
+
+                            Forms\Components\TextInput::make('phone')
+                            ->required()
+                            ->maxLength(14),
+
+                            
                         ])
                     ])
                     

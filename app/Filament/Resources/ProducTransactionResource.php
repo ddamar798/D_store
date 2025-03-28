@@ -153,6 +153,11 @@ class ProducTransactionResource extends Resource
                             ->required()
                             ->maxLength(255),
 
+                            Forms\Components\TextInput::make('post_code')
+                            ->required()
+                            ->maxLength(255),
+
+
                         ])
                     ])
                     

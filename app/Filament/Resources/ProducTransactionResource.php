@@ -185,10 +185,13 @@ class ProducTransactionResource extends Resource
 
                         Forms\Components\FileUpload::make('proof')
                         ->image()
-                        ->required()
-                    ])
+                        ->required(),
+                        ]),
 
                 ])
+                ->columnSpan('ful') // Use full width for the wizard
+                ->colums(1) // make sure the form has a single column layout
+                ->skippable()
             ]);
     }
 

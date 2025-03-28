@@ -181,6 +181,10 @@ class ProducTransactionResource extends Resource
                             true => 'heroicon-o-pencil',
                             false => 'heroicon-o-clock',
                         ])
+                        ->required(),
+
+                        Forms\Components\FileUpload::make('proof')
+                        ->image()
                         ->required()
                     ])
 

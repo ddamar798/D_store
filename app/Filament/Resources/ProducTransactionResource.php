@@ -146,8 +146,8 @@ class ProducTransactionResource extends Resource
                             ->maxLength(255),
 
                             Forms\Components\TextArea::make('address')
-                            ->required()
-                            ->maxLength(255),
+                            ->rows(5)
+                            ->required(),
 
                             Forms\Components\TextInput::make('city')
                             ->required()

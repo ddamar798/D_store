@@ -141,7 +141,11 @@ class ProducTransactionResource extends Resource
                             ->required()
                             ->maxLength(14),
 
-                            
+                            Forms\Components\TextInput::make('email')
+                            ->required()
+                            ->maxLength(255),
+
+
                         ])
                     ])
                     

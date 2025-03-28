@@ -129,6 +129,7 @@ class ProducTransactionResource extends Resource
 
                     ]),
 
+                    // Costumer information
                     Forms\Components\Wizard\Step::make('Costumer Information')
                     ->schema([
                         Grid::make(2)

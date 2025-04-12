@@ -25,6 +25,6 @@ class Brands extends Model
     }
 
     public function shoes(): HasMany{
-        return $this->HasMany(Shoes::class);
+        return $this->HasMany(Shoe::class);
     }
 }

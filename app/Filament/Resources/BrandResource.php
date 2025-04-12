@@ -6,6 +6,7 @@ use App\Filament\Resources\BrandResource\Pages;
 use App\Filament\Resources\BrandResource\RelationManagers;
 use App\Models\Brand;
 use App\Models\Brands;
+use App\Models\ProducTransaction;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -56,6 +57,15 @@ class BrandResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\ViewAction::make(),
+
+                Tables\Actions\Action::make('approve')
+                ->label('Approve')
+                ->action(function(ProducTransaction $record){
+                    $record->is_paid = true;
+                    $record->save();
+
+                    
+                })
 
             ])
             ->bulkActions([

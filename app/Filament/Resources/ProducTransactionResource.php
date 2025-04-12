@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ProductTransactionResource\Pages;
 use App\Filament\Resources\ProductTransactionResource\RelationManagers;
+use Filament\Tables\Filters\SelectFilter;
 
 use function Laravel\Prompts\form;
 
@@ -218,6 +219,9 @@ class ProducTransactionResource extends Resource
             ])
             ->filters([
                 //
+                SelectFilter::make('shoe_id')
+                ->label('shoe')
+                ->relationship('shoe', 'name'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

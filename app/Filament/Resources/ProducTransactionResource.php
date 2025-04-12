@@ -200,6 +200,21 @@ class ProducTransactionResource extends Resource
         return $table
             ->columns([
                 //
+                Tables\Columns\ImageColumn::make('shoe.thumbnail'),
+
+                Tables\Columns\TextColumn::make('name')
+                ->searchable(),
+
+                Tables\Columns\TextColumn::make('booking_trx_id')
+                ->searchable(),
+
+                Tables\Columns\IconColumn::make('is_paid')
+                ->boolean()
+                ->trueColor('success')
+                ->falseColor('error')
+                ->trueIcon('heroicon-0-check-circle')
+                ->falseIcon('heroicon-0-x-circle')
+                ->label('Terverivikasi'),
             ])
             ->filters([
                 //

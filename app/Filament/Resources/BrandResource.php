@@ -9,6 +9,7 @@ use App\Models\Brands;
 use App\Models\ProducTransaction;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -64,7 +65,12 @@ class BrandResource extends Resource
                     $record->is_paid = true;
                     $record->save();
 
-                    
+                    // Triger costum notification
+                    Notification::make()
+                    ->tittle('Order Approved')
+                    ->success()
+                    ->body('The order has been successfully approved.')
+                    ->send();
                 })
 
             ])

@@ -72,6 +72,9 @@ class BrandResource extends Resource
                     ->body('The order has been successfully approved.')
                     ->send();
                 })
+                ->color('success')
+                ->requiresConfirmation()
+                ->visible(fn (ProducTransaction $record) => !$record->is_paid) // Ini hanya muncul ketika button Approve belum terkonfirmasi.
 
             ])
             ->bulkActions([

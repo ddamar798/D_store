@@ -39,6 +39,10 @@ class ProducTransaction extends Model
         return $randomString; // jika ada akan masuk kesini.
     }
 
+    public function shoe(): BelongsTo{
+        return $this->belongsTo(Shoe::class,'shoe_id');
+    }
+
     public function promoCode(): BelongsTo{
         return $this->belongsTo(PromoCode::class, 'promo_code_id');
     }

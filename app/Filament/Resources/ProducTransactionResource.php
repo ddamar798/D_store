@@ -191,7 +191,7 @@ class ProducTransactionResource extends Resource
 
                 ])
                 ->columnSpan('ful') // Use full width for the wizard
-                ->colums(1) // make sure the form has a single column layout
+                ->columns(1) // make sure the form has a single column layout
                 ->skippable()
             ]);
     }

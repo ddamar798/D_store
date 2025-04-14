@@ -61,7 +61,7 @@ class BrandResource extends Resource
 
                 Tables\Actions\Action::make('approve')
                 ->label('Approve')
-                ->action(function(ProducTransaction $record){
+                ->action(function($record){
                     $record->is_paid = true;
                     $record->save();
 
@@ -74,7 +74,7 @@ class BrandResource extends Resource
                 })
                 ->color('success')
                 ->requiresConfirmation()
-                ->visible(fn (ProducTransaction $record) => !$record->is_paid) // Ini hanya muncul ketika button Approve belum terkonfirmasi.
+                ->visible(fn ($record) => !$record->is_paid) // Ini hanya muncul ketika button Approve belum terkonfirmasi.
 
             ])
             ->bulkActions([

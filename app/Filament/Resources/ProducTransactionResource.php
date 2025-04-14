@@ -97,7 +97,7 @@ class ProducTransactionResource extends Resource
                             }),
 
                             Forms\Components\Select::make('promo_code_id')
-                            ->reelationship('promoCode', 'code')
+                            ->relationship('promoCode', 'code')
                             ->searchable()
                             ->preload()
                             ->live()

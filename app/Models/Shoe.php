@@ -15,7 +15,7 @@ class Shoe extends Model
 
     protected $fillable = ['name', 'slug', 'thumbnail', 'about', 'price', 'stock', 'is_popular', 'category_id', 'brand_id',];
 
-    public function setNameAttributes($value){
+    public function setNameAttribute($value){
         $this->attributes['name'] = $value;
         $this->attributes['slug'] = Str::slug($value);
     }
